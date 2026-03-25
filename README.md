@@ -2,7 +2,7 @@
 
 Zero-dependency SVG drawing editor — injectable into any project. 7 tools, resize handles, rotation, properties panel. TypeScript-first, ESM + CJS.
 
-> **[Français](#français)** — scroll down for the French version.
+> **[Live demo](https://synapx.fr/sdk/Draw/)** · **[Français](#français)**
 
 ---
 
@@ -135,6 +135,8 @@ MIT © [SynapxLab](https://github.com/synapxLab)
 <a name="français"></a>
 
 # @synapxlab/draw — Documentation française
+
+> **[Démo live](https://synapx.fr/sdk/Draw/)**
 
 Éditeur de dessin SVG sans dépendance — injectable dans n'importe quel projet. 7 outils, poignées de redimensionnement, rotation, panneau de propriétés. TypeScript natif, ESM + CJS.
 
