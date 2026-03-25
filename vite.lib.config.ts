@@ -1,0 +1,26 @@
+import { defineConfig } from 'vite';
+import { resolve } from 'path';
+import { readFileSync } from 'fs';
+
+const { version } = JSON.parse(readFileSync(resolve(__dirname, 'package.json'), 'utf-8'));
+
+export default defineConfig({
+  define: {
+    __PKG_VERSION__: JSON.stringify(version),
+  },
+  build: {
+    outDir: 'dist',
+    emptyOutDir: true,
+    lib: {
+      entry: resolve(__dirname, 'src/index.ts'),
+      name: 'SynapxDraw',
+      formats: ['es', 'cjs'],
+      fileName: (format) => `draw.${format}.js`,
+    },
+    rollupOptions: {
+      output: {
+        assetFileNames: 'draw.[ext]',
+      },
+    },
+  },
+});

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>@synapxlab/draw — Demo</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      background: #f5f5f5;
+      color: #1a1a1a;
+      padding: 40px 20px;
+    }
+    h1 { font-size: 18px; font-weight: 600; margin-bottom: 8px; }
+    p  { font-size: 13px; color: #64748b; margin-bottom: 24px; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 18px; border-radius: 7px; border: none;
+      font-size: 13px; font-weight: 600; cursor: pointer;
+      background: #4f46e5; color: #fff; transition: opacity .15s;
+    }
+    .btn:hover { opacity: .88; }
+
+    #result {
+      margin-top: 32px;
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 24px;
+      min-height: 80px;
+      display: flex;
+      align-items: flex-start;
+    }
+    #result:empty::before {
+      content: 'Le dessin inséré apparaîtra ici…';
+      font-size: 13px;
+      color: #94a3b8;
+    }
+  </style>
+</head>
+<body>
+  <h1>@synapxlab/draw</h1>
+  <p>Éditeur SVG zéro dépendance — cliquez pour ouvrir l'éditeur, dessinez, puis cliquez Insérer.</p>
+
+  <button class="btn" id="openBtn">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+      <path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 013 3L7 19l-4 1 1-4L16.5 3.5z"/>
+    </svg>
+    Ouvrir l'éditeur
+  </button>
+
+  <div id="result"></div>
+
+  <script type="module" src="./main.ts"></script>
+</body>
+</html>

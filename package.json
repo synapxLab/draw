@@ -1,0 +1,38 @@
+{
+  "name": "@synapxlab/draw",
+  "version": "1.0.0",
+  "description": "Zero-dependency SVG drawing editor — inject into any app, TypeScript, ESM + CJS",
+  "keywords": ["svg", "draw", "editor", "zero-dependency", "typescript", "esm", "cjs"],
+  "homepage": "https://github.com/synapxLab/draw#readme",
+  "bugs": { "url": "https://github.com/synapxLab/draw/issues" },
+  "repository": { "type": "git", "url": "git+https://github.com/synapxLab/draw.git" },
+  "license": "MIT",
+  "author": "SynapxLab",
+  "main": "./dist/draw.cjs.js",
+  "module": "./dist/draw.es.js",
+  "types": "./dist/types/index.d.ts",
+  "style": "./dist/draw.css",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/draw.es.js",
+      "require": "./dist/draw.cjs.js"
+    },
+    "./style.css": "./dist/draw.css"
+  },
+  "files": ["dist", "LICENSE", "README.md"],
+  "engines": { "node": ">=18.0.0" },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build:lib": "vite build --config vite.lib.config.ts && tsc -p tsconfig.build.json",
+    "build:types": "tsc -p tsconfig.build.json",
+    "preview": "vite preview",
+    "prepublishOnly": "npm run build:lib"
+  },
+  "devDependencies": {
+    "sass": "^1.97.3",
+    "typescript": "^6.0.2",
+    "vite": "^7.3.1"
+  }
+}
